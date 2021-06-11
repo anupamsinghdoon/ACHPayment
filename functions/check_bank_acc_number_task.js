@@ -20,15 +20,24 @@ exports.check_bank_acc_number_task =async function(context, event, callback,RB) 
   
    // Confirm bank account number                  
   if ( bank_acc_num ) {
-    Say = `You said <say-as interpret-as='digits'>${bank_acc_num}</say-as>. Is that correct?`;
-    Prompt = ` say yes or no.`;
+    Say = `You said <say-as interpret-as='digits'>${bank_acc_num}</say-as>.`;
+    Prompt = ` Is that correct? say yes or no. You can also press 1 for yes and 2 for no.`;
   
     Say += Prompt;
     
     Remember.bank_acc_num = bank_acc_num;
     Remember.question = 'bank_acc_num_check';
   
-    Listen = true;
+    Listen = {
+      "voice_digits":{
+        "num_digits": 1,
+        "finish_on_key": "#",
+        "redirects": {
+          1: "task://bank_account_type",
+          2: "task://bank_account_number"
+        }
+      }
+    }
     Tasks=['yes_no', 'agent_transfer'];
   }
   else {

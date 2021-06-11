@@ -10,7 +10,9 @@ exports.agent_transfer_task =async function(context, event, callback,RB) {
     // Add your code here.
     const Memory = JSON.parse(event.Memory);
 
-     Say = `Please hold the line while I transfer you to an agent.`;
+     //Say = `Please hold the line while I transfer you to an agent.`;
+
+     Remember.Agent = true;
     //End of your code.
    
      RB(Say, Listen, Remember, Collect, Tasks, Redirect, Handoff, callback);

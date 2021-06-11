@@ -18,7 +18,7 @@ switch(Memory.question)
     else
      Remember.CallectFallback_greetings_counter = Memory.CallectFallback_greetings_counter + 1;
 
-     if(Memory.CallectFallback_greetings_counter >= 2)
+     if(Memory.CallectFallback_greetings_counter >= 1)
      {
        Say = false;
        Listen = false;
@@ -36,7 +36,7 @@ switch(Memory.question)
     else
      Remember.CallectFallback_bankAccType_counter = Memory.CallectFallback_bankAccType_counter + 1;
 
-     if(Memory.CallectFallback_bankAccType_counter >= 2)
+     if(Memory.CallectFallback_bankAccType_counter >= 1)
      {
        Say = false;
        Listen = false;
@@ -54,7 +54,7 @@ switch(Memory.question)
     else
      Remember.CallectFallback_AccNumCheck_counter = Memory.CallectFallback_AccNumCheck_counter + 1;
 
-     if(Memory.CallectFallback_AccNumCheck_counter >= 2)
+     if(Memory.CallectFallback_AccNumCheck_counter >= 1)
      {
        Say = false;
        Listen = false;

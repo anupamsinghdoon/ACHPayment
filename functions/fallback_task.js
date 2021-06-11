@@ -34,7 +34,7 @@ exports.fallback_task =async function(context, event, callback,RB) {
     else
      Remember.Fallback_greetings_counter = Memory.Fallback_greetings_counter + 1;
 
-     if(Memory.Fallback_greetings_counter >= 2)
+     if(Memory.Fallback_greetings_counter >= 1)
      {
        Say = false;
        Listen = false;
@@ -52,7 +52,7 @@ exports.fallback_task =async function(context, event, callback,RB) {
     else
      Remember.Fallback_bankAccType_counter = Memory.Fallback_bankAccType_counter + 1;
 
-     if(Memory.Fallback_bankAccType_counter >= 2)
+     if(Memory.Fallback_bankAccType_counter >= 1)
      {
        Say = false;
        Listen = false;
@@ -70,7 +70,7 @@ exports.fallback_task =async function(context, event, callback,RB) {
     else
      Remember.Fallback_AccNumCheck_counter = Memory.Fallback_AccNumCheck_counter + 1;
 
-     if(Memory.Fallback_AccNumCheck_counter >= 2)
+     if(Memory.Fallback_AccNumCheck_counter >= 1)
      {
        Say = false;
        Listen = false;

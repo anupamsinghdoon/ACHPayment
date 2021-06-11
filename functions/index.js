@@ -13,7 +13,7 @@ const fallbackHandler = require(functions['fallback_task'].path);
 
 
 const responseBuilder = require(functions['responseBuilder'].path);
-
+// this Index test 01/09/2021
 exports.handler = async (context, event, callback) => {
   const { CurrentTask } = event;
 console.log(functions);

@@ -26,21 +26,24 @@ exports.check_routing_number_task =async function(context, event, callback,RB) {
 
     if ( validRoutingNum ) {
       Say = `You said <say-as interpret-as='digits'>${routing_num}</say-as>. `;
-      Prompt = `Is that correct? say yes or no .`;
+      Prompt = `Is that correct? say yes or no. You can also press 1 for yes and 2 for no.`;
     
       Say += Prompt;
       
       Remember.bank_acc_routing = routing_num;
       Remember.question = 'routing_check';
-      voice_digits= {
-        "num_digits": 1,
-        "finish_on_key": "#",
-        "mapping": {
-          "1": "Yes",
-          "2": "No"
+      Remember.flag="No";
+      Listen = {
+        "voice_digits":{
+          "num_digits": 1,
+          "finish_on_key": "#",
+          "redirects": {
+            1: "task://bank_account_number",
+            2: "task://greeting"
+          }
         }
       }
-      Listen = true;
+      ;
       Tasks=['yes_no', 'agent_transfer'];
     } 
     else {

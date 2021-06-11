@@ -8,8 +8,9 @@ exports.greeting_task =async function(context, event, callback,RB) {
   let Redirect = false;
   let Handoff = false;
   let Say = "";
-  // Add your code here.
+  // Add your code here...
   const Memory = JSON.parse(event.Memory);
+  Remember.Agent = false;
   console.log('greeting_task');
   console.log('Memory.flag:'+ Memory.flag);
   
@@ -54,6 +55,7 @@ exports.greeting_task =async function(context, event, callback,RB) {
   }
 }
   else{
+    
     Remember.question = 'greeting';
     Collect =  {
            "name": "collect_routing",
